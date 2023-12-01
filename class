@@ -1,0 +1,28 @@
+//class for high scores
+class points{
+    public:
+    points();
+    int high_score=0;
+    void ViewStats(int *);
+    void updateHighScore(int score) {
+        if (score > high_score) {
+            high_score = score;
+            
+        }
+    }
+};
+//constructor
+points::points(){
+    high_score;
+}
+
+
+void ViewStats(){
+  LCD.Clear(LIGHTSEAGREEN);
+  //view the high score
+  points p;
+  LCD.WriteRC("High Score: ", 3, 1);
+  LCD.WriteRC(p.high_score, 6, 1);
+  //option to return to menu
+  MenuButton();
+}//end of function
